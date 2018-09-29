@@ -10,9 +10,7 @@ package sdndatavisualize;
  * @author HP
  */
 import java.io.*;
-import java.util.*;
-import org.json.simple.*;
-import java.sql.*;
+
 
 public class SDNdatavisualize {
 
