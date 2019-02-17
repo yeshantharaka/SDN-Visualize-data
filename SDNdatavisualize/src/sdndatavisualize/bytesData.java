@@ -16,9 +16,9 @@ public class bytesData {
     public void create_file(String query, String query1) throws IOException{
         try{
             String myDriver = "org.gjt.mm.mysql.Driver";
-            String myUrl = "jdbc:mysql://localhost/sdn";
+            String myUrl = "jdbc:mysql://localhost/testbed";
             Class.forName(myDriver);
-            Connection conn = DriverManager.getConnection(myUrl, "root", "");
+            Connection conn = DriverManager.getConnection(myUrl, "root", "root");
             Statement st = conn.createStatement();
             Statement st1 = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -100,7 +100,10 @@ public class bytesData {
                 file.write(obj_1.toJSONString()+ "\n");
                 //System.out.println("Successfully Copied JSON Object to File...");
                 //System.out.println("\nJSON Object: " + obj_1);
+                
             }
+            UploadBytes ub = new UploadBytes();
+            ub.upload();
 
         }
     }

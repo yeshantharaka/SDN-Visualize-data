@@ -17,9 +17,9 @@ public class trafficData {
     public void create_file(String query, String query1) throws IOException{
         try{
             String myDriver = "org.gjt.mm.mysql.Driver";
-            String myUrl = "jdbc:mysql://localhost/sdn";
+            String myUrl = "jdbc:mysql://localhost/testbed";
             Class.forName(myDriver);
-            Connection conn = DriverManager.getConnection(myUrl, "root", "");
+            Connection conn = DriverManager.getConnection(myUrl, "root", "root");
             Statement st = conn.createStatement();
             Statement st1 = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -69,7 +69,7 @@ public class trafficData {
               }
               count++;
             }
-            
+            /**/
             new trafficData().create_json(mac_arr,receive_arr,transmit_arr,count_row);
             st1.close();
             st.close();
@@ -102,7 +102,8 @@ public class trafficData {
                 //System.out.println("Successfully Copied JSON Object to File...");
                 //System.out.println("\nJSON Object: " + obj_1);
             }
-
+            UploadTraffic ut = new UploadTraffic();
+            ut.upload();
         }
     }
       

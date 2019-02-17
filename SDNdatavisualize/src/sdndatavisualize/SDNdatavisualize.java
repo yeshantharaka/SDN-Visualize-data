@@ -40,7 +40,7 @@ public class SDNdatavisualize {
     
     public void get_response() throws IOException  {
         //create trafic file
-        String query_packets = "SELECT mac,received_packets,transmitted_packets FROM packets WHERE DATE(date_time)>='2018-09-29' ORDER BY mac ASC,id ASC";
+        String query_packets = "SELECT mac,received_packets,transmitted_packets,date_time as date FROM packets WHERE DATE(date_time)>='2018-09-29' ORDER BY DATE(date_time) ASC,mac ASC,id ASC";
         String query_packets_l = "SELECT mac FROM packets WHERE DATE(date_time)>='2018-09-29' GROUP BY mac";
 
         trafficData td = new trafficData();

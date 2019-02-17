@@ -16,9 +16,9 @@ public class errorDetails {
     public void create_file(String query, String query1) throws IOException{
         try{
             String myDriver = "org.gjt.mm.mysql.Driver";
-            String myUrl = "jdbc:mysql://localhost/sdn";
+            String myUrl = "jdbc:mysql://localhost/testbed";
             Class.forName(myDriver);
-            Connection conn = DriverManager.getConnection(myUrl, "root", "");
+            Connection conn = DriverManager.getConnection(myUrl, "root", "root");
             Statement st = conn.createStatement();
             Statement st1 = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
